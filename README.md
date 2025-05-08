@@ -25,5 +25,7 @@ Basic events:
 
 For account request, token request, and server list request you will need to respond with the appropiate information. Account request and token request will be sent when connecting to the server in the client message `C_LOGIN_ARBITER`. The response for server list request will need to be serialized with protobuf. The structure is defined `serverlist.proto` and can be use to generate serialization code for whatever language your launcher is written in.
 
+For more information on the launcher protocol check out [this excelent documentation](https://docs.vezel.dev/novadrop/game/launcher-client-protocol) by [vezel-dev](https://github.com/vezel-dev)
+
 ### Dependencies
 protobuf (can be installed with vcpkg)
