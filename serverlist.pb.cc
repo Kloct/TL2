@@ -25,16 +25,17 @@ PROTOBUF_CONSTEXPR ServerList_Server::ServerList_Server(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.rawname_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.category_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.crowdness_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.open_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.category_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.title_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.queue_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.population_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.popup_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.id_)*/0
-  , /*decltype(_impl_.ip_)*/0
-  , /*decltype(_impl_.port_)*/0
-  , /*decltype(_impl_.lang_)*/0} {}
+  , /*decltype(_impl_.host_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.id_)*/0u
+  , /*decltype(_impl_.address_)*/0u
+  , /*decltype(_impl_.port_)*/0u
+  , /*decltype(_impl_.available_)*/0u} {}
 struct ServerList_ServerDefaultTypeInternal {
   PROTOBUF_CONSTEXPR ServerList_ServerDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -49,8 +50,8 @@ PROTOBUF_CONSTEXPR ServerList::ServerList(
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
   , /*decltype(_impl_.servers_)*/{}
-  , /*decltype(_impl_.lastplayedid_)*/0
-  , /*decltype(_impl_.unknwn2_)*/0} {}
+  , /*decltype(_impl_.lastserverid_)*/0u
+  , /*decltype(_impl_.sortcriterion_)*/0u} {}
 struct ServerListDefaultTypeInternal {
   PROTOBUF_CONSTEXPR ServerListDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -73,25 +74,27 @@ const uint32_t TableStruct_serverlist_2eproto::offsets[] PROTOBUF_SECTION_VARIAB
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList_Server, _impl_.id_),
-  PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList_Server, _impl_.rawname_),
-  PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList_Server, _impl_.category_),
   PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList_Server, _impl_.name_),
-  PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList_Server, _impl_.crowdness_),
-  PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList_Server, _impl_.open_),
-  PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList_Server, _impl_.ip_),
+  PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList_Server, _impl_.category_),
+  PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList_Server, _impl_.title_),
+  PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList_Server, _impl_.queue_),
+  PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList_Server, _impl_.population_),
+  PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList_Server, _impl_.address_),
   PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList_Server, _impl_.port_),
-  PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList_Server, _impl_.lang_),
+  PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList_Server, _impl_.available_),
   PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList_Server, _impl_.popup_),
-  6,
+  PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList_Server, _impl_.host_),
+  7,
   0,
   1,
   2,
   3,
   4,
-  7,
   8,
   9,
+  10,
   5,
+  6,
   PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -99,15 +102,15 @@ const uint32_t TableStruct_serverlist_2eproto::offsets[] PROTOBUF_SECTION_VARIAB
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList, _impl_.servers_),
-  PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList, _impl_.lastplayedid_),
-  PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList, _impl_.unknwn2_),
+  PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList, _impl_.lastserverid_),
+  PROTOBUF_FIELD_OFFSET(::TeraLauncher::ServerList, _impl_.sortcriterion_),
   ~0u,
   0,
   1,
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 16, -1, sizeof(::TeraLauncher::ServerList_Server)},
-  { 26, 35, -1, sizeof(::TeraLauncher::ServerList)},
+  { 0, 17, -1, sizeof(::TeraLauncher::ServerList_Server)},
+  { 28, 37, -1, sizeof(::TeraLauncher::ServerList)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -116,18 +119,19 @@ static const ::_pb::Message* const file_default_instances[] = {
 };
 
 const char descriptor_table_protodef_serverlist_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\020serverlist.proto\022\014TeraLauncher\"\205\002\n\nSer"
+  "\n\020serverlist.proto\022\014TeraLauncher\"\243\002\n\nSer"
   "verList\0220\n\007servers\030\001 \003(\0132\037.TeraLauncher."
-  "ServerList.Server\022\024\n\014LastPlayedId\030\002 \002(\017\022"
-  "\017\n\007unknwn2\030\003 \002(\017\032\235\001\n\006Server\022\n\n\002id\030\001 \002(\017\022"
-  "\017\n\007rawname\030\002 \002(\014\022\020\n\010category\030\003 \002(\014\022\014\n\004na"
-  "me\030\004 \002(\014\022\021\n\tcrowdness\030\005 \002(\014\022\014\n\004open\030\006 \002("
-  "\014\022\n\n\002ip\030\007 \002(\017\022\014\n\004port\030\010 \002(\017\022\014\n\004lang\030\t \002("
-  "\017\022\r\n\005popup\030\n \002(\014"
+  "ServerList.Server\022\024\n\014lastServerId\030\002 \002(\007\022"
+  "\025\n\rsortCriterion\030\003 \002(\007\032\265\001\n\006Server\022\n\n\002id\030"
+  "\001 \002(\007\022\014\n\004name\030\002 \002(\014\022\020\n\010category\030\003 \002(\014\022\r\n"
+  "\005title\030\004 \002(\014\022\r\n\005queue\030\005 \002(\014\022\022\n\npopulatio"
+  "n\030\006 \002(\014\022\017\n\007address\030\007 \002(\007\022\014\n\004port\030\010 \002(\007\022\021"
+  "\n\tavailable\030\t \002(\007\022\r\n\005popup\030\n \002(\014\022\014\n\004host"
+  "\030\013 \001(\014"
   ;
 static ::_pbi::once_flag descriptor_table_serverlist_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_serverlist_2eproto = {
-    false, false, 296, descriptor_table_protodef_serverlist_2eproto,
+    false, false, 326, descriptor_table_protodef_serverlist_2eproto,
     "serverlist.proto",
     &descriptor_table_serverlist_2eproto_once, nullptr, 0, 2,
     schemas, file_default_instances, TableStruct_serverlist_2eproto::offsets,
@@ -148,37 +152,40 @@ class ServerList_Server::_Internal {
  public:
   using HasBits = decltype(std::declval<ServerList_Server>()._impl_._has_bits_);
   static void set_has_id(HasBits* has_bits) {
-    (*has_bits)[0] |= 64u;
+    (*has_bits)[0] |= 128u;
   }
-  static void set_has_rawname(HasBits* has_bits) {
+  static void set_has_name(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
   static void set_has_category(HasBits* has_bits) {
     (*has_bits)[0] |= 2u;
   }
-  static void set_has_name(HasBits* has_bits) {
+  static void set_has_title(HasBits* has_bits) {
     (*has_bits)[0] |= 4u;
   }
-  static void set_has_crowdness(HasBits* has_bits) {
+  static void set_has_queue(HasBits* has_bits) {
     (*has_bits)[0] |= 8u;
   }
-  static void set_has_open(HasBits* has_bits) {
+  static void set_has_population(HasBits* has_bits) {
     (*has_bits)[0] |= 16u;
   }
-  static void set_has_ip(HasBits* has_bits) {
-    (*has_bits)[0] |= 128u;
-  }
-  static void set_has_port(HasBits* has_bits) {
+  static void set_has_address(HasBits* has_bits) {
     (*has_bits)[0] |= 256u;
   }
-  static void set_has_lang(HasBits* has_bits) {
+  static void set_has_port(HasBits* has_bits) {
     (*has_bits)[0] |= 512u;
+  }
+  static void set_has_available(HasBits* has_bits) {
+    (*has_bits)[0] |= 1024u;
   }
   static void set_has_popup(HasBits* has_bits) {
     (*has_bits)[0] |= 32u;
   }
+  static void set_has_host(HasBits* has_bits) {
+    (*has_bits)[0] |= 64u;
+  }
   static bool MissingRequiredFields(const HasBits& has_bits) {
-    return ((has_bits[0] & 0x000003ff) ^ 0x000003ff) != 0;
+    return ((has_bits[0] & 0x000007bf) ^ 0x000007bf) != 0;
   }
 };
 
@@ -194,24 +201,25 @@ ServerList_Server::ServerList_Server(const ServerList_Server& from)
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.rawname_){}
-    , decltype(_impl_.category_){}
     , decltype(_impl_.name_){}
-    , decltype(_impl_.crowdness_){}
-    , decltype(_impl_.open_){}
+    , decltype(_impl_.category_){}
+    , decltype(_impl_.title_){}
+    , decltype(_impl_.queue_){}
+    , decltype(_impl_.population_){}
     , decltype(_impl_.popup_){}
+    , decltype(_impl_.host_){}
     , decltype(_impl_.id_){}
-    , decltype(_impl_.ip_){}
+    , decltype(_impl_.address_){}
     , decltype(_impl_.port_){}
-    , decltype(_impl_.lang_){}};
+    , decltype(_impl_.available_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.rawname_.InitDefault();
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.rawname_.Set("", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_rawname()) {
-    _this->_impl_.rawname_.Set(from._internal_rawname(), 
+  if (from._internal_has_name()) {
+    _this->_impl_.name_.Set(from._internal_name(), 
       _this->GetArenaForAllocation());
   }
   _impl_.category_.InitDefault();
@@ -222,28 +230,28 @@ ServerList_Server::ServerList_Server(const ServerList_Server& from)
     _this->_impl_.category_.Set(from._internal_category(), 
       _this->GetArenaForAllocation());
   }
-  _impl_.name_.InitDefault();
+  _impl_.title_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.name_.Set("", GetArenaForAllocation());
+    _impl_.title_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_name()) {
-    _this->_impl_.name_.Set(from._internal_name(), 
+  if (from._internal_has_title()) {
+    _this->_impl_.title_.Set(from._internal_title(), 
       _this->GetArenaForAllocation());
   }
-  _impl_.crowdness_.InitDefault();
+  _impl_.queue_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.crowdness_.Set("", GetArenaForAllocation());
+    _impl_.queue_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_crowdness()) {
-    _this->_impl_.crowdness_.Set(from._internal_crowdness(), 
+  if (from._internal_has_queue()) {
+    _this->_impl_.queue_.Set(from._internal_queue(), 
       _this->GetArenaForAllocation());
   }
-  _impl_.open_.InitDefault();
+  _impl_.population_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.open_.Set("", GetArenaForAllocation());
+    _impl_.population_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_open()) {
-    _this->_impl_.open_.Set(from._internal_open(), 
+  if (from._internal_has_population()) {
+    _this->_impl_.population_.Set(from._internal_population(), 
       _this->GetArenaForAllocation());
   }
   _impl_.popup_.InitDefault();
@@ -254,9 +262,17 @@ ServerList_Server::ServerList_Server(const ServerList_Server& from)
     _this->_impl_.popup_.Set(from._internal_popup(), 
       _this->GetArenaForAllocation());
   }
+  _impl_.host_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.host_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_host()) {
+    _this->_impl_.host_.Set(from._internal_host(), 
+      _this->GetArenaForAllocation());
+  }
   ::memcpy(&_impl_.id_, &from._impl_.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.lang_) -
-    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.lang_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.available_) -
+    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.available_));
   // @@protoc_insertion_point(copy_constructor:TeraLauncher.ServerList.Server)
 }
 
@@ -267,40 +283,45 @@ inline void ServerList_Server::SharedCtor(
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.rawname_){}
-    , decltype(_impl_.category_){}
     , decltype(_impl_.name_){}
-    , decltype(_impl_.crowdness_){}
-    , decltype(_impl_.open_){}
+    , decltype(_impl_.category_){}
+    , decltype(_impl_.title_){}
+    , decltype(_impl_.queue_){}
+    , decltype(_impl_.population_){}
     , decltype(_impl_.popup_){}
-    , decltype(_impl_.id_){0}
-    , decltype(_impl_.ip_){0}
-    , decltype(_impl_.port_){0}
-    , decltype(_impl_.lang_){0}
+    , decltype(_impl_.host_){}
+    , decltype(_impl_.id_){0u}
+    , decltype(_impl_.address_){0u}
+    , decltype(_impl_.port_){0u}
+    , decltype(_impl_.available_){0u}
   };
-  _impl_.rawname_.InitDefault();
+  _impl_.name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.rawname_.Set("", GetArenaForAllocation());
+    _impl_.name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.category_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.category_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.name_.InitDefault();
+  _impl_.title_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.name_.Set("", GetArenaForAllocation());
+    _impl_.title_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.crowdness_.InitDefault();
+  _impl_.queue_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.crowdness_.Set("", GetArenaForAllocation());
+    _impl_.queue_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.open_.InitDefault();
+  _impl_.population_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.open_.Set("", GetArenaForAllocation());
+    _impl_.population_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.popup_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.popup_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.host_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.host_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -315,12 +336,13 @@ ServerList_Server::~ServerList_Server() {
 
 inline void ServerList_Server::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.rawname_.Destroy();
-  _impl_.category_.Destroy();
   _impl_.name_.Destroy();
-  _impl_.crowdness_.Destroy();
-  _impl_.open_.Destroy();
+  _impl_.category_.Destroy();
+  _impl_.title_.Destroy();
+  _impl_.queue_.Destroy();
+  _impl_.population_.Destroy();
   _impl_.popup_.Destroy();
+  _impl_.host_.Destroy();
 }
 
 void ServerList_Server::SetCachedSize(int size) const {
@@ -334,35 +356,34 @@ void ServerList_Server::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000003fu) {
+  if (cached_has_bits & 0x0000007fu) {
     if (cached_has_bits & 0x00000001u) {
-      _impl_.rawname_.ClearNonDefaultToEmpty();
+      _impl_.name_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
       _impl_.category_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000004u) {
-      _impl_.name_.ClearNonDefaultToEmpty();
+      _impl_.title_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000008u) {
-      _impl_.crowdness_.ClearNonDefaultToEmpty();
+      _impl_.queue_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000010u) {
-      _impl_.open_.ClearNonDefaultToEmpty();
+      _impl_.population_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000020u) {
       _impl_.popup_.ClearNonDefaultToEmpty();
     }
+    if (cached_has_bits & 0x00000040u) {
+      _impl_.host_.ClearNonDefaultToEmpty();
+    }
   }
-  if (cached_has_bits & 0x000000c0u) {
-    ::memset(&_impl_.id_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.ip_) -
-        reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.ip_));
-  }
-  if (cached_has_bits & 0x00000300u) {
-    ::memset(&_impl_.port_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.lang_) -
-        reinterpret_cast<char*>(&_impl_.port_)) + sizeof(_impl_.lang_));
+  _impl_.id_ = 0u;
+  if (cached_has_bits & 0x00000700u) {
+    ::memset(&_impl_.address_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.available_) -
+        reinterpret_cast<char*>(&_impl_.address_)) + sizeof(_impl_.available_));
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -375,19 +396,19 @@ const char* ServerList_Server::_InternalParse(const char* ptr, ::_pbi::ParseCont
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // required sfixed32 id = 1;
+      // required fixed32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
           _Internal::set_has_id(&has_bits);
-          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<int32_t>(ptr);
-          ptr += sizeof(int32_t);
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<uint32_t>(ptr);
+          ptr += sizeof(uint32_t);
         } else
           goto handle_unusual;
         continue;
-      // required bytes rawname = 2;
+      // required bytes name = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_rawname();
+          auto str = _internal_mutable_name();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
@@ -402,57 +423,57 @@ const char* ServerList_Server::_InternalParse(const char* ptr, ::_pbi::ParseCont
         } else
           goto handle_unusual;
         continue;
-      // required bytes name = 4;
+      // required bytes title = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          auto str = _internal_mutable_name();
+          auto str = _internal_mutable_title();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // required bytes crowdness = 5;
+      // required bytes queue = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
-          auto str = _internal_mutable_crowdness();
+          auto str = _internal_mutable_queue();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // required bytes open = 6;
+      // required bytes population = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
-          auto str = _internal_mutable_open();
+          auto str = _internal_mutable_population();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // required sfixed32 ip = 7;
+      // required fixed32 address = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 61)) {
-          _Internal::set_has_ip(&has_bits);
-          _impl_.ip_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<int32_t>(ptr);
-          ptr += sizeof(int32_t);
+          _Internal::set_has_address(&has_bits);
+          _impl_.address_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<uint32_t>(ptr);
+          ptr += sizeof(uint32_t);
         } else
           goto handle_unusual;
         continue;
-      // required sfixed32 port = 8;
+      // required fixed32 port = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 69)) {
           _Internal::set_has_port(&has_bits);
-          _impl_.port_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<int32_t>(ptr);
-          ptr += sizeof(int32_t);
+          _impl_.port_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<uint32_t>(ptr);
+          ptr += sizeof(uint32_t);
         } else
           goto handle_unusual;
         continue;
-      // required sfixed32 lang = 9;
+      // required fixed32 available = 9;
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 77)) {
-          _Internal::set_has_lang(&has_bits);
-          _impl_.lang_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<int32_t>(ptr);
-          ptr += sizeof(int32_t);
+          _Internal::set_has_available(&has_bits);
+          _impl_.available_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<uint32_t>(ptr);
+          ptr += sizeof(uint32_t);
         } else
           goto handle_unusual;
         continue;
@@ -460,6 +481,15 @@ const char* ServerList_Server::_InternalParse(const char* ptr, ::_pbi::ParseCont
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
           auto str = _internal_mutable_popup();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional bytes host = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
+          auto str = _internal_mutable_host();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
@@ -496,16 +526,16 @@ uint8_t* ServerList_Server::_InternalSerialize(
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  // required sfixed32 id = 1;
-  if (cached_has_bits & 0x00000040u) {
+  // required fixed32 id = 1;
+  if (cached_has_bits & 0x00000080u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteSFixed32ToArray(1, this->_internal_id(), target);
+    target = ::_pbi::WireFormatLite::WriteFixed32ToArray(1, this->_internal_id(), target);
   }
 
-  // required bytes rawname = 2;
+  // required bytes name = 2;
   if (cached_has_bits & 0x00000001u) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_rawname(), target);
+        2, this->_internal_name(), target);
   }
 
   // required bytes category = 3;
@@ -514,46 +544,52 @@ uint8_t* ServerList_Server::_InternalSerialize(
         3, this->_internal_category(), target);
   }
 
-  // required bytes name = 4;
+  // required bytes title = 4;
   if (cached_has_bits & 0x00000004u) {
     target = stream->WriteBytesMaybeAliased(
-        4, this->_internal_name(), target);
+        4, this->_internal_title(), target);
   }
 
-  // required bytes crowdness = 5;
+  // required bytes queue = 5;
   if (cached_has_bits & 0x00000008u) {
     target = stream->WriteBytesMaybeAliased(
-        5, this->_internal_crowdness(), target);
+        5, this->_internal_queue(), target);
   }
 
-  // required bytes open = 6;
+  // required bytes population = 6;
   if (cached_has_bits & 0x00000010u) {
     target = stream->WriteBytesMaybeAliased(
-        6, this->_internal_open(), target);
+        6, this->_internal_population(), target);
   }
 
-  // required sfixed32 ip = 7;
-  if (cached_has_bits & 0x00000080u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteSFixed32ToArray(7, this->_internal_ip(), target);
-  }
-
-  // required sfixed32 port = 8;
+  // required fixed32 address = 7;
   if (cached_has_bits & 0x00000100u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteSFixed32ToArray(8, this->_internal_port(), target);
+    target = ::_pbi::WireFormatLite::WriteFixed32ToArray(7, this->_internal_address(), target);
   }
 
-  // required sfixed32 lang = 9;
+  // required fixed32 port = 8;
   if (cached_has_bits & 0x00000200u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteSFixed32ToArray(9, this->_internal_lang(), target);
+    target = ::_pbi::WireFormatLite::WriteFixed32ToArray(8, this->_internal_port(), target);
+  }
+
+  // required fixed32 available = 9;
+  if (cached_has_bits & 0x00000400u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFixed32ToArray(9, this->_internal_available(), target);
   }
 
   // required bytes popup = 10;
   if (cached_has_bits & 0x00000020u) {
     target = stream->WriteBytesMaybeAliased(
         10, this->_internal_popup(), target);
+  }
+
+  // optional bytes host = 11;
+  if (cached_has_bits & 0x00000040u) {
+    target = stream->WriteBytesMaybeAliased(
+        11, this->_internal_host(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -568,11 +604,11 @@ size_t ServerList_Server::RequiredFieldsByteSizeFallback() const {
 // @@protoc_insertion_point(required_fields_byte_size_fallback_start:TeraLauncher.ServerList.Server)
   size_t total_size = 0;
 
-  if (_internal_has_rawname()) {
-    // required bytes rawname = 2;
+  if (_internal_has_name()) {
+    // required bytes name = 2;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_rawname());
+        this->_internal_name());
   }
 
   if (_internal_has_category()) {
@@ -582,25 +618,25 @@ size_t ServerList_Server::RequiredFieldsByteSizeFallback() const {
         this->_internal_category());
   }
 
-  if (_internal_has_name()) {
-    // required bytes name = 4;
+  if (_internal_has_title()) {
+    // required bytes title = 4;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_name());
+        this->_internal_title());
   }
 
-  if (_internal_has_crowdness()) {
-    // required bytes crowdness = 5;
+  if (_internal_has_queue()) {
+    // required bytes queue = 5;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_crowdness());
+        this->_internal_queue());
   }
 
-  if (_internal_has_open()) {
-    // required bytes open = 6;
+  if (_internal_has_population()) {
+    // required bytes population = 6;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_open());
+        this->_internal_population());
   }
 
   if (_internal_has_popup()) {
@@ -611,22 +647,22 @@ size_t ServerList_Server::RequiredFieldsByteSizeFallback() const {
   }
 
   if (_internal_has_id()) {
-    // required sfixed32 id = 1;
+    // required fixed32 id = 1;
     total_size += 1 + 4;
   }
 
-  if (_internal_has_ip()) {
-    // required sfixed32 ip = 7;
+  if (_internal_has_address()) {
+    // required fixed32 address = 7;
     total_size += 1 + 4;
   }
 
   if (_internal_has_port()) {
-    // required sfixed32 port = 8;
+    // required fixed32 port = 8;
     total_size += 1 + 4;
   }
 
-  if (_internal_has_lang()) {
-    // required sfixed32 lang = 9;
+  if (_internal_has_available()) {
+    // required fixed32 available = 9;
     total_size += 1 + 4;
   }
 
@@ -636,47 +672,47 @@ size_t ServerList_Server::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:TeraLauncher.ServerList.Server)
   size_t total_size = 0;
 
-  if (((_impl_._has_bits_[0] & 0x000003ff) ^ 0x000003ff) == 0) {  // All required fields are present.
-    // required bytes rawname = 2;
+  if (((_impl_._has_bits_[0] & 0x000007bf) ^ 0x000007bf) == 0) {  // All required fields are present.
+    // required bytes name = 2;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_rawname());
+        this->_internal_name());
 
     // required bytes category = 3;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_category());
 
-    // required bytes name = 4;
+    // required bytes title = 4;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_name());
+        this->_internal_title());
 
-    // required bytes crowdness = 5;
+    // required bytes queue = 5;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_crowdness());
+        this->_internal_queue());
 
-    // required bytes open = 6;
+    // required bytes population = 6;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_open());
+        this->_internal_population());
 
     // required bytes popup = 10;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_popup());
 
-    // required sfixed32 id = 1;
+    // required fixed32 id = 1;
     total_size += 1 + 4;
 
-    // required sfixed32 ip = 7;
+    // required fixed32 address = 7;
     total_size += 1 + 4;
 
-    // required sfixed32 port = 8;
+    // required fixed32 port = 8;
     total_size += 1 + 4;
 
-    // required sfixed32 lang = 9;
+    // required fixed32 available = 9;
     total_size += 1 + 4;
 
   } else {
@@ -685,6 +721,14 @@ size_t ServerList_Server::ByteSizeLong() const {
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // optional bytes host = 11;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000040u) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_host());
+  }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
@@ -707,37 +751,40 @@ void ServerList_Server::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, cons
   cached_has_bits = from._impl_._has_bits_[0];
   if (cached_has_bits & 0x000000ffu) {
     if (cached_has_bits & 0x00000001u) {
-      _this->_internal_set_rawname(from._internal_rawname());
+      _this->_internal_set_name(from._internal_name());
     }
     if (cached_has_bits & 0x00000002u) {
       _this->_internal_set_category(from._internal_category());
     }
     if (cached_has_bits & 0x00000004u) {
-      _this->_internal_set_name(from._internal_name());
+      _this->_internal_set_title(from._internal_title());
     }
     if (cached_has_bits & 0x00000008u) {
-      _this->_internal_set_crowdness(from._internal_crowdness());
+      _this->_internal_set_queue(from._internal_queue());
     }
     if (cached_has_bits & 0x00000010u) {
-      _this->_internal_set_open(from._internal_open());
+      _this->_internal_set_population(from._internal_population());
     }
     if (cached_has_bits & 0x00000020u) {
       _this->_internal_set_popup(from._internal_popup());
     }
     if (cached_has_bits & 0x00000040u) {
-      _this->_impl_.id_ = from._impl_.id_;
+      _this->_internal_set_host(from._internal_host());
     }
     if (cached_has_bits & 0x00000080u) {
-      _this->_impl_.ip_ = from._impl_.ip_;
+      _this->_impl_.id_ = from._impl_.id_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
-  if (cached_has_bits & 0x00000300u) {
+  if (cached_has_bits & 0x00000700u) {
     if (cached_has_bits & 0x00000100u) {
-      _this->_impl_.port_ = from._impl_.port_;
+      _this->_impl_.address_ = from._impl_.address_;
     }
     if (cached_has_bits & 0x00000200u) {
-      _this->_impl_.lang_ = from._impl_.lang_;
+      _this->_impl_.port_ = from._impl_.port_;
+    }
+    if (cached_has_bits & 0x00000400u) {
+      _this->_impl_.available_ = from._impl_.available_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
@@ -763,32 +810,36 @@ void ServerList_Server::InternalSwap(ServerList_Server* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.rawname_, lhs_arena,
-      &other->_impl_.rawname_, rhs_arena
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.category_, lhs_arena,
       &other->_impl_.category_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.name_, lhs_arena,
-      &other->_impl_.name_, rhs_arena
+      &_impl_.title_, lhs_arena,
+      &other->_impl_.title_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.crowdness_, lhs_arena,
-      &other->_impl_.crowdness_, rhs_arena
+      &_impl_.queue_, lhs_arena,
+      &other->_impl_.queue_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.open_, lhs_arena,
-      &other->_impl_.open_, rhs_arena
+      &_impl_.population_, lhs_arena,
+      &other->_impl_.population_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.popup_, lhs_arena,
       &other->_impl_.popup_, rhs_arena
   );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.host_, lhs_arena,
+      &other->_impl_.host_, rhs_arena
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ServerList_Server, _impl_.lang_)
-      + sizeof(ServerList_Server::_impl_.lang_)
+      PROTOBUF_FIELD_OFFSET(ServerList_Server, _impl_.available_)
+      + sizeof(ServerList_Server::_impl_.available_)
       - PROTOBUF_FIELD_OFFSET(ServerList_Server, _impl_.id_)>(
           reinterpret_cast<char*>(&_impl_.id_),
           reinterpret_cast<char*>(&other->_impl_.id_));
@@ -805,10 +856,10 @@ void ServerList_Server::InternalSwap(ServerList_Server* other) {
 class ServerList::_Internal {
  public:
   using HasBits = decltype(std::declval<ServerList>()._impl_._has_bits_);
-  static void set_has_lastplayedid(HasBits* has_bits) {
+  static void set_has_lastserverid(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
-  static void set_has_unknwn2(HasBits* has_bits) {
+  static void set_has_sortcriterion(HasBits* has_bits) {
     (*has_bits)[0] |= 2u;
   }
   static bool MissingRequiredFields(const HasBits& has_bits) {
@@ -829,13 +880,13 @@ ServerList::ServerList(const ServerList& from)
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.servers_){from._impl_.servers_}
-    , decltype(_impl_.lastplayedid_){}
-    , decltype(_impl_.unknwn2_){}};
+    , decltype(_impl_.lastserverid_){}
+    , decltype(_impl_.sortcriterion_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&_impl_.lastplayedid_, &from._impl_.lastplayedid_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.unknwn2_) -
-    reinterpret_cast<char*>(&_impl_.lastplayedid_)) + sizeof(_impl_.unknwn2_));
+  ::memcpy(&_impl_.lastserverid_, &from._impl_.lastserverid_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.sortcriterion_) -
+    reinterpret_cast<char*>(&_impl_.lastserverid_)) + sizeof(_impl_.sortcriterion_));
   // @@protoc_insertion_point(copy_constructor:TeraLauncher.ServerList)
 }
 
@@ -847,8 +898,8 @@ inline void ServerList::SharedCtor(
       decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.servers_){arena}
-    , decltype(_impl_.lastplayedid_){0}
-    , decltype(_impl_.unknwn2_){0}
+    , decltype(_impl_.lastserverid_){0u}
+    , decltype(_impl_.sortcriterion_){0u}
   };
 }
 
@@ -879,9 +930,9 @@ void ServerList::Clear() {
   _impl_.servers_.Clear();
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
-    ::memset(&_impl_.lastplayedid_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.unknwn2_) -
-        reinterpret_cast<char*>(&_impl_.lastplayedid_)) + sizeof(_impl_.unknwn2_));
+    ::memset(&_impl_.lastserverid_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.sortcriterion_) -
+        reinterpret_cast<char*>(&_impl_.lastserverid_)) + sizeof(_impl_.sortcriterion_));
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -907,21 +958,21 @@ const char* ServerList::_InternalParse(const char* ptr, ::_pbi::ParseContext* ct
         } else
           goto handle_unusual;
         continue;
-      // required sfixed32 LastPlayedId = 2;
+      // required fixed32 lastServerId = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
-          _Internal::set_has_lastplayedid(&has_bits);
-          _impl_.lastplayedid_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<int32_t>(ptr);
-          ptr += sizeof(int32_t);
+          _Internal::set_has_lastserverid(&has_bits);
+          _impl_.lastserverid_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<uint32_t>(ptr);
+          ptr += sizeof(uint32_t);
         } else
           goto handle_unusual;
         continue;
-      // required sfixed32 unknwn2 = 3;
+      // required fixed32 sortCriterion = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
-          _Internal::set_has_unknwn2(&has_bits);
-          _impl_.unknwn2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<int32_t>(ptr);
-          ptr += sizeof(int32_t);
+          _Internal::set_has_sortcriterion(&has_bits);
+          _impl_.sortcriterion_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<uint32_t>(ptr);
+          ptr += sizeof(uint32_t);
         } else
           goto handle_unusual;
         continue;
@@ -964,16 +1015,16 @@ uint8_t* ServerList::_InternalSerialize(
   }
 
   cached_has_bits = _impl_._has_bits_[0];
-  // required sfixed32 LastPlayedId = 2;
+  // required fixed32 lastServerId = 2;
   if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteSFixed32ToArray(2, this->_internal_lastplayedid(), target);
+    target = ::_pbi::WireFormatLite::WriteFixed32ToArray(2, this->_internal_lastserverid(), target);
   }
 
-  // required sfixed32 unknwn2 = 3;
+  // required fixed32 sortCriterion = 3;
   if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteSFixed32ToArray(3, this->_internal_unknwn2(), target);
+    target = ::_pbi::WireFormatLite::WriteFixed32ToArray(3, this->_internal_sortcriterion(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -988,13 +1039,13 @@ size_t ServerList::RequiredFieldsByteSizeFallback() const {
 // @@protoc_insertion_point(required_fields_byte_size_fallback_start:TeraLauncher.ServerList)
   size_t total_size = 0;
 
-  if (_internal_has_lastplayedid()) {
-    // required sfixed32 LastPlayedId = 2;
+  if (_internal_has_lastserverid()) {
+    // required fixed32 lastServerId = 2;
     total_size += 1 + 4;
   }
 
-  if (_internal_has_unknwn2()) {
-    // required sfixed32 unknwn2 = 3;
+  if (_internal_has_sortcriterion()) {
+    // required fixed32 sortCriterion = 3;
     total_size += 1 + 4;
   }
 
@@ -1005,10 +1056,10 @@ size_t ServerList::ByteSizeLong() const {
   size_t total_size = 0;
 
   if (((_impl_._has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
-    // required sfixed32 LastPlayedId = 2;
+    // required fixed32 lastServerId = 2;
     total_size += 1 + 4;
 
-    // required sfixed32 unknwn2 = 3;
+    // required fixed32 sortCriterion = 3;
     total_size += 1 + 4;
 
   } else {
@@ -1047,10 +1098,10 @@ void ServerList::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PRO
   cached_has_bits = from._impl_._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      _this->_impl_.lastplayedid_ = from._impl_.lastplayedid_;
+      _this->_impl_.lastserverid_ = from._impl_.lastserverid_;
     }
     if (cached_has_bits & 0x00000002u) {
-      _this->_impl_.unknwn2_ = from._impl_.unknwn2_;
+      _this->_impl_.sortcriterion_ = from._impl_.sortcriterion_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
@@ -1077,11 +1128,11 @@ void ServerList::InternalSwap(ServerList* other) {
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.servers_.InternalSwap(&other->_impl_.servers_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ServerList, _impl_.unknwn2_)
-      + sizeof(ServerList::_impl_.unknwn2_)
-      - PROTOBUF_FIELD_OFFSET(ServerList, _impl_.lastplayedid_)>(
-          reinterpret_cast<char*>(&_impl_.lastplayedid_),
-          reinterpret_cast<char*>(&other->_impl_.lastplayedid_));
+      PROTOBUF_FIELD_OFFSET(ServerList, _impl_.sortcriterion_)
+      + sizeof(ServerList::_impl_.sortcriterion_)
+      - PROTOBUF_FIELD_OFFSET(ServerList, _impl_.lastserverid_)>(
+          reinterpret_cast<char*>(&_impl_.lastserverid_),
+          reinterpret_cast<char*>(&other->_impl_.lastserverid_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ServerList::GetMetadata() const {

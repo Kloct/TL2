@@ -1,0 +1,24 @@
+﻿syntax = "proto2";
+package TeraLauncher;
+
+message ServerList
+{
+    message Server
+    {
+        required fixed32 id = 1;
+        required bytes name = 2;
+        required bytes category = 3;
+        required bytes title = 4;
+        required bytes queue = 5;
+        required bytes population = 6;
+        required fixed32 address = 7;
+        required fixed32 port = 8;
+        required fixed32 available = 9;
+        required bytes popup = 10;
+        optional bytes host = 11;
+    }
+
+    repeated Server servers = 1;
+    required fixed32 lastServerId = 2;
+    required fixed32 sortCriterion = 3;
+}

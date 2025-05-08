@@ -72,13 +72,13 @@ BOOL waitForRecv(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam, UINT req
 		return 0;
 	}
 	std::cout << "cbRecv: " << cbRecv << std::endl;
-	if (request == TOKEN) {
+	if (request == TOKEN_REQUEST) {
 		SendToClient(TOKEN_RESPONSE);
 	}
-	if (request == ACCOUNT) {
+	if (request == ACCOUNT_REQUEST) {
 		SendToClient(ACCOUNT_RESPONSE);
 	}
-	if (request == SERVER_LIST) {
+	if (request == SERVER_LIST_REQUEST) {
 		SendToClient(SERVER_LIST_RESPONSE);
 	}
 }
